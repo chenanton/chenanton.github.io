@@ -4220,3 +4220,7 @@ body.is-preload #banner p {
     width: 100%;
     text-decoration: none;
 }
+
+.flexbox {
+	display: flex;
+}
