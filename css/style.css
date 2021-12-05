@@ -1,0 +1,60 @@
+body {
+	font-family: "Myriad Pro", "Helvetica Neue", Helvetica;
+	font-size: 14px;
+}
+
+h1 {
+	font-size: 14px;
+	font-style: bold;
+}
+
+h2 {
+	font-size: 14px;
+	font-style: italic;
+	font-weight: normal;
+}
+
+a {
+	text-decoration: none;
+}
+
+ul {
+	list-style-type: square;
+	padding: 0;
+	padding-left: 20px;
+}
+
+
+.content-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.content {
+	margin-top: 60px;
+	float: left;
+	width: 600px;
+}
+
+.content .section {
+	padding-bottom: 25px;
+}
+
+nav-menu {
+	position: fixed;
+	bottom: 30px;
+	right: 30px;
+	text-align: right;
+	width: 150px;
+}
+
+nav-menu ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	margin-top: 15px;
+}
+
+nav-menu .title {
+	padding-bottom: 15px;
+}
