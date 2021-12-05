@@ -29,33 +29,33 @@ class Menu extends HTMLElement {
 		// this.innerHTML = `
 		// 	<span class="title">Anton Chen</span>
 		// 	<ul>
-		// 		<li><a href="about.html">About</a></li>
-		// 		<li><a href="education.html">Education</a></li>
-		// 		<li><a href="experience.html">Experience</a></li>
-		// 		<li><a href="projects.html">Projects</a></li>
-		// 		<li><a href="research.html">Research</a></li>
-		// 		<li><a href="courses.html">Courses</a></li>
-		// 		<li><a href="linux-unix.html">Linux/Unix</a></li>
-		// 		<li><a href="keyboards.html">Keyboards</a></li>
-		// 		<li><a href="piano.html">Piano</a></li>
-		// 		<li><a href="trumpet.html">Trumpet</a></li>
-		// 		<li><a href="running.html">Running</a></li>
-		// 		<li><a href="cooking.html">Cooking</a></li>
+		// 		<li><a href="about">About</a></li>
+		// 		<li><a href="education">Education</a></li>
+		// 		<li><a href="experience">Experience</a></li>
+		// 		<li><a href="projects">Projects</a></li>
+		// 		<li><a href="research">Research</a></li>
+		// 		<li><a href="courses">Courses</a></li>
+		// 		<li><a href="linux-unix">Linux/Unix</a></li>
+		// 		<li><a href="keyboards">Keyboards</a></li>
+		// 		<li><a href="piano">Piano</a></li>
+		// 		<li><a href="trumpet">Trumpet</a></li>
+		// 		<li><a href="running">Running</a></li>
+		// 		<li><a href="cooking">Cooking</a></li>
 		// 		<li><a href="assets/AntonChenResume.pdf">Resume</a></li>
-		// 		<li><a href="contact.html">Contact</a></li>
-		// 		<li><a href="settings.html">Settings</a></li>
+		// 		<li><a href="contact">Contact</a></li>
+		// 		<li><a href="settings">Settings</a></li>
 		// 	</ul>
 		// `;
 		this.innerHTML = `
 			<span class="title">Anton Chen</span>
 			<ul>
-				<li><a href="about.html">About</a></li>
-				<li><a href="education.html">Education</a></li>
-				<li><a href="experience.html">Experience</a></li>
-				<li><a href="projects.html">Projects</a></li>
+				<li><a href="about">About</a></li>
+				<li><a href="education">Education</a></li>
+				<li><a href="experience">Experience</a></li>
+				<li><a href="projects">Projects</a></li>
 				<li><a href="assets/AntonChenResume.pdf">Resume</a></li>
-				<li><a href="contact.html">Contact</a></li>
-				<li><a href="settings.html">Settings</a></li>
+				<li><a href="contact">Contact</a></li>
+				<li><a href="settings">Settings</a></li>
 			</ul>
 		`;
 	}
