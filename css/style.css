@@ -1,21 +1,32 @@
+:root {
+	--bg-color: white;
+	--fg-color: black;
+	--href-color: lightblue;
+	--font-size: 14px;
+	--font-family: "Helvetica Neue", Helvetica;
+}
+
 body {
-	font-family: "Myriad Pro", "Helvetica Neue", Helvetica;
-	font-size: 14px;
+	font-family: var(--font-family);
+	font-size: var(--font-size);
+	background-color: var(--bg-color);
+	color: var(--fg-color);
 }
 
 h1 {
-	font-size: 14px;
+	font-size: var(--font-size);
 	font-style: bold;
 }
 
 h2 {
-	font-size: 14px;
+	font-size: var(--font-size);
 	font-style: italic;
 	font-weight: normal;
 }
 
 a {
 	text-decoration: none;
+	color: var(--href-color);
 }
 
 ul {
@@ -57,4 +68,14 @@ nav-menu ul {
 
 nav-menu .title {
 	padding-bottom: 15px;
+}
+
+button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
 }

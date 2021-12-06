@@ -1,13 +1,9 @@
-function toggleDarkMode() {
+function toggleTheme() {
 	let isDarkMode = localStorage.getItem("isDarkMode");
-	if (isDarkMode !== "true") {
-		localStorage.setItem("isDarkMode", "true");
-	} else {
-		localStorage.setItem("isDarkMode", "false");
-	}
+	localStorage.setItem("isDarkMode", (isDarkMode === "true") ? "false" : "true");
+	setColors();
 }
 
-document.getElementById("toggle-dark-mode").addEventListener("click", () => {
-	toggleDarkMode();
-	setThemeColors();
-});
+// document.getElementById("toggle-dark-mode").addEventListener("click", () => {
+// 	toggleDarkMode();
+// });
