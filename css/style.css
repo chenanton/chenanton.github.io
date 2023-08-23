@@ -1,0 +1,81 @@
+:root {
+	--bg-color: white;
+	--fg-color: black;
+	--href-color: lightblue;
+	--font-size: 14px;
+	--font-family: "Helvetica Neue", Helvetica;
+}
+
+body {
+	font-family: var(--font-family);
+	font-size: var(--font-size);
+	background-color: var(--bg-color);
+	color: var(--fg-color);
+}
+
+h1 {
+	font-size: var(--font-size);
+	font-style: bold;
+}
+
+h2 {
+	font-size: var(--font-size);
+	font-style: italic;
+	font-weight: normal;
+}
+
+a {
+	text-decoration: none;
+	color: var(--href-color);
+}
+
+ul {
+	list-style-type: square;
+	padding: 0;
+	padding-left: 20px;
+}
+
+
+.content-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.content {
+	margin-top: 60px;
+	float: left;
+	width: 600px;
+}
+
+.content .section {
+	padding-bottom: 25px;
+}
+
+nav-menu {
+	position: fixed;
+	bottom: 30px;
+	right: 30px;
+	text-align: right;
+	width: 150px;
+}
+
+nav-menu ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	margin-top: 15px;
+}
+
+nav-menu .title {
+	padding-bottom: 15px;
+}
+
+button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
