@@ -61,4 +61,8 @@ video {
     padding-right: 5%;
     flex-direction: column;
   }
+
+  .column {
+    margin-right: 0;
+  }
 }
