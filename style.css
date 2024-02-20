@@ -21,6 +21,7 @@ header, main, footer {
 
 .column img {
   width: 100%;
+  height: auto;
   margin-bottom: 20px;
   display: block;
 }
