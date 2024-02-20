@@ -16,7 +16,12 @@ header, main, footer {
 }
 
 .column {
+  flex: 1;
   margin-right: 20px;
+}
+
+.column:last-child {
+  margin-right: 0;
 }
 
 .column img {
