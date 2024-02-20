@@ -39,6 +39,7 @@ video {
   max-width: 100%;
   height: auto;
   display: block;
+  margin-bottom: 20px;
 }
 
 /* Responsive styles for even wider screens */
