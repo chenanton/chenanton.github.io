@@ -6,6 +6,10 @@ body.network {
   font-family: Inter, Helvetica, sans-serif;
 }
 
+body.network h1 {
+  font-size: 3em;
+}
+
 body.network li {
   list-style-type: disclosure-closed;
   padding-top: 2px;

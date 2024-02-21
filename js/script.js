@@ -1,5 +1,7 @@
 var modes = [
-  'default', 'network', 'terminal'
+  'default', 
+  'network', 
+  'terminal'
 ]
 
 var titles = [
