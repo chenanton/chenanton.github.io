@@ -4,21 +4,24 @@
 /* Default styles for all screen sizes */
 body {
   transition: color 0.5s, font-family 0.5s;
-  margin-left: 10%;
-  margin-right: 10%;
+  margin-left: 8%;
+  margin-right: 8%;
+  padding-left: 2%;
+  padding-right: 2%;
 }
 
 /* Dark mode */
 
 body.dark-mode {
-  color: #f3f4f5;
+  color: #f0f1f2;
   font-family: Inter, Helvetica, sans-serif;
 }
 
 body.dark-mode a {
   text-decoration: none;
   font-weight: bold;
-  color: #61afef;
+  /* color: #61afef; */
+  color: #fff;
 }
 
 body.dark-mode a:active {
@@ -34,6 +37,7 @@ body.dark-mode img, video {
 }
 
 #vanta-container {
+  backdrop-filter: blur(3px); /* Set your desired blur value */
   position: fixed;
   top: 0;
   left: 0;
@@ -81,17 +85,27 @@ video {
 }
 
 .content-container {
-  margin-left: -40px;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  margin-left: -60px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 20px;
 }
+
+body.dark-mode .content-container {
+  background-color: rgba(0.8, 0.6, 0.7, 0.5);
+  border-radius: 8px;
+  backdrop-filter: blur(3px); /* Set your desired blur value */
+}
+
 
 /* Widescreen and mobile */
 
 @media screen and (min-width: 1200px) {
   body {
-    margin-left: 25%;
-    margin-right: 25%;
+    margin-left: 20%;
+    margin-right: 20%;
+    padding-left: 5%;
+    padding-right: 5%;
   }
 }
 
@@ -110,5 +124,9 @@ video {
 
   .column {
     margin-right: 0;
+  }
+
+  .content-container {
+    margin-left: -40px;
   }
 }

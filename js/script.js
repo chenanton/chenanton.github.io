@@ -16,8 +16,9 @@ function toggleDarkMode() {
       minWidth: 200.00,
       scale: 1.00,
       scaleMobile: 1.00,
-      color: 0x1A1E2A,
-      backgroundColor: 0x11151F,
+      // color: 0x1A1E2A,
+      color: 0xf73737,
+      backgroundColor: 0x10141A,
     });
   } else if (vantaBackground) {
     vantaBackground.destroy();
