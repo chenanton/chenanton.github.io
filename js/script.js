@@ -31,6 +31,7 @@ function toggleContent(page, id) {
   if (!contentDiv) {
     contentDiv = document.createElement('div');
     contentDiv.id = id + '-content';
+    contentDiv.className = 'content-container';
     listItem.appendChild(contentDiv);
 
     fetch(page)
