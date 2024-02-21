@@ -25,15 +25,98 @@
 
     <ul class="nest-level-0">
       <li>
+        <a href="javascript:void(0);" 
+          onclick="toggleContent('content/about.html', 'about')">
+          About
+        </a>
+      </li>
+      <li>
+        <span class="caret">
+          <a href="javascript:void(0);">Education</a>
+        </span>
+        <ul class="nested nest-level-1">
+          <li>
+            <a href="javascript:void(0);" 
+              onclick="toggleContent('content/education/ubc2024.html', 
+              'ubc2024', 1)">
+              UBC, B.Sc., 2024.
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <span class="caret">
+          <a href="javascript:void(0);">Experience</a>
+        </span>
+        <ul class="nested nest-level-1">
+          <li>
+            <a href="javascript:void(0);" 
+              onclick="toggleContent('content/experience/aws2023.html', 
+              'aws2023', 1)">
+              AWS, Software Engineering Intern, 2023.
+            </a>
+          </li>
+          <li>
+            <a href="javascript:void(0);" 
+              onclick="toggleContent('content/experience/tesla2023.html', 
+              'tesla2023', 1)">
+              Tesla, Software Engineering Intern, 2023.
+            </a>
+          </li>
+          <li>
+            <a href="javascript:void(0);" 
+              onclick="toggleContent('content/experience/aws2022.html', 
+              'aws2022', 1)">
+              AWS, Software Engineering Intern, 2022.
+            </a>
+          </li>
+          <li>
+            <a href="javascript:void(0);" 
+              onclick="toggleContent('content/experience/vipre2021.html', 
+              'vipre2021', 1)">
+              VIPRE Security, Software Engineering Intern, 2021.
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li>
         <span class="caret">
           <a href="javascript:void(0);">Projects</a>
-          </span>
+        </span>
         <ul class="nested nest-level-1">
           <li>
             <span class="caret">
               <a href="javascript:void(0);">Development</a>
             </span>
             <ul class="nested nest-level-2">
+              <li>
+                <a href="javascript:void(0);" 
+                  onclick="toggleContent('content/projects/ubc-insight.html', 
+                  'ubc-insight', 2)">
+                  UBC Course and Building Query Engine
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0);" 
+                  onclick="toggleContent('content/projects/sentri.html', 
+                  'sentri', 2)">
+                  Campus Safe Walk Planner (Hackathon)
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0);" 
+                  onclick="toggleContent('content/projects/vaccelerator.html', 
+                  'vaccelerator', 2)">
+                  COVID Vaccine Distribution Dashboard (Hackathon)
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0);" 
+                  onclick="toggleContent('content/projects/personal-website.html', 
+                  'personal-website', 2)">
+                  Personal Website
+                </a>
+              </li>
               <li>
                 <a href="javascript:void(0);" 
                   onclick="toggleContent('content/projects/rubiks-nn.html', 
@@ -88,16 +171,16 @@
         </ul>
       </li>
       <li>
-        <a href="javascript:void(0);" onclick="toggleContent('content/lifts.html', 'lifts')">Lifts</a>
+        <a href="javascript:void(0);" 
+          onclick="toggleContent('content/lifts.html', 'lifts')">
+          Lifting
+        </a>
       </li>
       <li>
-        <a href="javascript:void(0);" onclick="toggleContent('content/pictures.html', 'pictures')">Pictures</a>
+        <a href="javascript:void(0);" onclick="toggleContent('content/pictures.html', 'pictures')">Gallery</a>
       </li>
       <li>
         <a href="assets/AntonChenResume.pdf" target="_blank">Résumé</a>
-      </li>
-      <li>
-        <a href="javascript:void(0);" onclick="toggleContent('content/about.html', 'about')">About</a>
       </li>
       <li>
         <a href="javascript:void(0);" onclick="toggleContent('content/contact.html', 'contact')">Contact</a>
@@ -113,12 +196,23 @@
       &copy; 2024 Anton Chen
     </footer>
 
+    <!-- <div>sex</div> -->
+
   </main>
 
-</body>
+  <script 
+    src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r119/three.min.js">
+  </script>
+  <script 
+    src="https://cdn.jsdelivr.net/gh/tengbao/vanta@master/dist/vanta.net.min.js">
+  </script>
+  <script 
+    type="text/javascript" src="js/vanilla-tilt.min.js">
+  </script>
+  <script 
+    src="js/script.js">
+  </script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r119/three.min.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/tengbao/vanta@master/dist/vanta.net.min.js"></script>
-<script src="js/script.js"></script>
+</body>
 
 </html>
