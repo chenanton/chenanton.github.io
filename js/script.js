@@ -1,4 +1,30 @@
-var modes = ['default', 'network', 'terminal']
+var modes = [
+  'default', 'network', 'terminal'
+]
+
+var titles = [
+  'antonchen.ca',
+  'Anton Chen\'s Website',
+  'root@antonchen.ca'
+]
+
+var greetings = [
+  'Anton Chen',
+  'Hi, I\'m Anton! 👋',
+  `$ echo \'#include <iostream>
+
+int main() {
+  std::cout << "antonchen.ca" << std::endl;
+
+  return 0;
+}
+\'
+> main.cc
+&& g++ -o main.cc 
+&& ./a.out
+  `
+]
+
 var currentModeIndex = 0;
 
 let vantaBackground = null;
@@ -14,6 +40,9 @@ function toggleMode() {
   document.body.classList.add(modes[currentModeIndex]);
 
   // Customize other mode-specific actions here
+  document.title = titles[currentModeIndex];
+  document.getElementById('greeting').textContent = greetings[currentModeIndex];
+
   if (modes[currentModeIndex] === 'network') {
     vantaBackground = VANTA.NET({
       el: "#vanta-container",
