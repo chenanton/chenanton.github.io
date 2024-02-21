@@ -37,9 +37,7 @@ body.network video {
 }
 
 body.network .content-container {
-  border: 0px solid #000;
-}
-
-body.network img, video {
-  border: 0px solid #000;
+  background-color: rgba(0.8, 0.6, 0.7, 0.5);
+  border-radius: 8px;
+  backdrop-filter: blur(3px);
 }
