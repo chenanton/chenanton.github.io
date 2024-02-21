@@ -2,15 +2,9 @@ let isDarkMode = false;
 let vantaBackground = null;
 
 function toggleDarkMode() {
-  const body = document.body;
-
-  body.classList.toggle('dark-mode', isDarkMode);
-
   isDarkMode = !isDarkMode; 
 
-  // Toggle styling
-  body.style.color = isDarkMode ? '#f3f4f5' : '';
-  body.style.fontFamily = isDarkMode ? 'Inter, Helvetica, sans-serif' : '';
+  document.body.classList.toggle('dark-mode');
 
   if (isDarkMode) {
     vantaBackground = VANTA.NET({
@@ -35,13 +29,9 @@ function toggleContent(page, id) {
   var contentDiv = document.getElementById(id + '-content');
 
   if (!contentDiv) {
-    // Create a new content div if not exists
     contentDiv = document.createElement('div');
-    contentDiv.id = id + '-content';
-    contentDiv.className = 'content-container';
     listItem.appendChild(contentDiv);
 
-    // Fetch and show content
     fetch(page)
       .then(response => response.text())
       .then(html => {
