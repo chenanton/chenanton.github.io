@@ -20,9 +20,8 @@ int main() {
 }
 \'
 > main.cc
-&& g++ -o main.cc 
-&& ./a.out
-  `
+&& g++ main.cc
+&& ./a.out`
 ]
 
 var currentModeIndex = 0;

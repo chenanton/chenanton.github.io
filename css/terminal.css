@@ -9,7 +9,7 @@ body.terminal p {
 }
 
 body.terminal li {
-  list-style-type: decimal-leading-zero;
+  list-style-type: lower-alpha;
 }
 
 body.terminal a {
