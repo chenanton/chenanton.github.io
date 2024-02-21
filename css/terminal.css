@@ -33,6 +33,10 @@ body.terminal .content-container {
   border: 1px solid #0f0;
 }
 
-body.terminal img, video {
+body.terminal img {
+  border: 1px solid #0f0;
+}
+
+body.terminal video {
   border: 1px solid #0f0;
 }
