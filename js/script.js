@@ -4,7 +4,7 @@ let vantaBackground = null;
 function toggleDarkMode() {
   isDarkMode = !isDarkMode; 
 
-  document.body.classList.toggle('dark-mode');
+  document.body.classList.toggle('dark-mode'); // toggle styling
 
   if (isDarkMode) {
     vantaBackground = VANTA.NET({
@@ -30,6 +30,7 @@ function toggleContent(page, id) {
 
   if (!contentDiv) {
     contentDiv = document.createElement('div');
+    contentDiv.id = id + '-content';
     listItem.appendChild(contentDiv);
 
     fetch(page)
@@ -40,9 +41,10 @@ function toggleContent(page, id) {
       .catch(error => console.error('Error fetching content:', error));
   } else {
     if (contentDiv.innerHTML.trim() !== '') {
-      contentDiv.innerHTML = '';
-    } 
+      contentDiv.innerHTML = ''; // Clear the content
+    }
 
+    // Remove the contentDiv from its parent
     listItem.removeChild(contentDiv);
   }
 }
