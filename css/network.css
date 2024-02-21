@@ -1,0 +1,39 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+body.network {
+  color: #f0f1f2;
+  font-family: Inter, Helvetica, sans-serif;
+}
+
+body.network li {
+  list-style-type: disclosure-closed;
+}
+
+body.network a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #fff;
+}
+
+body.network a:active {
+  color: #e06c75;
+}
+
+body.network a:hover {
+  color: #c678dd;
+}
+
+body.network a:visited {
+  color: #c678dd;
+}
+
+body.network img, video {
+  border-radius: 4px;
+}
+
+body.network .content-container {
+  background-color: rgba(0.8, 0.6, 0.7, 0.5);
+  border-radius: 8px;
+  backdrop-filter: blur(3px); /* Set your desired blur value */
+}

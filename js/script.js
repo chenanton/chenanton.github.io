@@ -1,12 +1,20 @@
-let isDarkMode = false;
+var modes = ['default', 'network', 'terminal']
+var currentModeIndex = 0;
+
 let vantaBackground = null;
 
-function toggleDarkMode() {
-  isDarkMode = !isDarkMode; 
+function toggleMode() {
+  // Remove the current mode class
+  document.body.classList.remove(modes[currentModeIndex]);
 
-  document.body.classList.toggle('dark-mode'); // toggle styling
+  // Increment the mode index or reset to 0 if at the end of the array
+  currentModeIndex = (currentModeIndex + 1) % modes.length;
 
-  if (isDarkMode) {
+  // Add the new mode class
+  document.body.classList.add(modes[currentModeIndex]);
+
+  // Customize other mode-specific actions here
+  if (modes[currentModeIndex] === 'network') {
     vantaBackground = VANTA.NET({
       el: "#vanta-container",
       mouseControls: false,

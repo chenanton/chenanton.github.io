@@ -1,6 +1,3 @@
-/* Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
-
 /* Default styles for all screen sizes */
 body {
   transition: color 0.5s, font-family 0.5s;
@@ -8,49 +5,6 @@ body {
   margin-right: 8%;
   padding-left: 2%;
   padding-right: 2%;
-}
-
-/* Dark mode */
-
-body.dark-mode {
-  color: #f0f1f2;
-  font-family: Inter, Helvetica, sans-serif;
-}
-
-li {
-  list-style-type: square;
-}
-
-body.dark-mode li {
-  list-style-type: disclosure-closed;
-}
-
-body.dark-mode a {
-  text-decoration: none;
-  font-weight: bold;
-  color: #fff;
-}
-
-body.dark-mode a:active {
-  color: #e06c75;
-}
-
-body.dark-mode a:hover {
-  color: #c678dd;
-}
-
-body.dark-mode a:visited {
-  color: #c678dd;
-}
-
-body.dark-mode img, video {
-  border-radius: 4px;
-}
-
-body.dark-mode .content-container {
-  background-color: rgba(0.8, 0.6, 0.7, 0.5);
-  border-radius: 8px;
-  backdrop-filter: blur(3px); /* Set your desired blur value */
 }
 
 #vanta-container {
@@ -66,6 +20,10 @@ body.dark-mode .content-container {
 header, main, footer {
   padding-top: 10px;
   padding-bottom: 10px;
+}
+
+li {
+  list-style-type: square;
 }
 
 /* Columns */

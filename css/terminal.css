@@ -1,0 +1,18 @@
+body.terminal {
+  color: #0f0;
+  background-color: #000;
+  font-family: monospace;
+}
+
+body.terminal li {
+  list-style-type: decimal-leading-zero;
+}
+
+body.terminal a {
+  font-weight: bold;
+  color: #0ff;
+}
+
+body.terminal .content-container, img, video {
+  border: 1px solid #0f0;
+}
