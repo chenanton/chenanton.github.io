@@ -15,12 +15,12 @@ body {
 body.dark-mode {
   color: #f0f1f2;
   font-family: Inter, Helvetica, sans-serif;
+  list-style-type: square; /* Dark mode bullet point style */
 }
 
 body.dark-mode a {
   text-decoration: none;
   font-weight: bold;
-  /* color: #61afef; */
   color: #fff;
 }
 
@@ -113,7 +113,7 @@ body.dark-mode .content-container {
   body {
     margin-left: 5%;
     margin-right: 5%;
-    font-size: 20px;
+    font-size: 16px;
   }
 
   .columns {
