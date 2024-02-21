@@ -60,7 +60,6 @@ video {
 }
 
 .content-container {
-  margin-left: -60px;
   margin-top: 10px;
   margin-bottom: 10px;
   padding: 20px;
@@ -95,7 +94,46 @@ video {
   }
 
   .content-container {
-    margin-left: -60px;
+    /* margin-left: -60px; */
     margin-right: -20px;
   }
+
+  .content-container.nest-level-0 {
+    margin-left: -60px;
+  }
+
+  .content-container.nest-level-1 {
+    margin-left: -100px;
+  }
+
+  .content-container.nest-level-2 {
+    margin-left: -140px;
+  }
 }
+
+/* Nesting */
+
+.nested {
+  display: none;
+}
+
+.active {
+  display: block;
+}
+
+.content-container.nest-level-0 {
+  margin-left: -60px;
+}
+
+.content-container.nest-level-1 {
+  margin-left: -100px;
+}
+
+.content-container.nest-level-2 {
+  margin-left: -140px;
+}
+
+.caret-down {
+  color: #f00;
+}
+

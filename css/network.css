@@ -8,12 +8,30 @@ body.network {
 
 body.network li {
   list-style-type: disclosure-closed;
+  padding-top: 2px;
+  padding-bottom: 2px;
 }
 
 body.network a {
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 500;
+  font-style: italic;
   color: #fff;
+}
+
+body.network .nest-level-0 a {
+  font-weight: 500;
+  text-decoration: underline;
+}
+
+body.network .nest-level-1 a {
+  font-weight: 300;
+  text-decoration: none;
+}
+
+body.network .nest-level-2 a {
+  font-style: normal;
+  text-decoration: underline;
 }
 
 body.network a:active {
@@ -28,11 +46,8 @@ body.network a:visited {
   color: #fff;
 }
 
+body.network video,
 body.network img {
-  border-radius: 4px;
-}
-
-body.network video {
   border-radius: 4px;
 }
 
@@ -40,4 +55,10 @@ body.network .content-container {
   background-color: rgba(0.8, 0.6, 0.7, 0.5);
   border-radius: 8px;
   backdrop-filter: blur(3px);
+}
+
+body.network .content-container a {
+  text-decoration: none;
+  font-weight: 500;
+  font-style: italic;
 }

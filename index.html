@@ -23,18 +23,69 @@
     Welcome to my website. While you're here, you might as well look around.
     </p>
 
-    <ul>
+    <ul class="nest-level-0">
       <li>
-        <a href="javascript:void(0);" onclick="toggleContent('content/about.html', 'about')">About</a>
-      </li>
-      <li>
-        <a href="javascript:void(0);" onclick="toggleContent('content/contact.html', 'contact')">Contact</a>
-      </li>
-      <li>
-        <a href="assets/AntonChenResume.pdf" target="_blank">Résumé</a>
-      </li>
-      <li>
-        <a href="javascript:void(0);" onclick="toggleContent('content/builds.html', 'builds')">Builds</a>
+        <span class="caret">
+          <a href="javascript:void(0);">Projects</a>
+          </span>
+        <ul class="nested nest-level-1">
+          <li>
+            <span class="caret">
+              <a href="javascript:void(0);">Development</a>
+            </span>
+            <ul class="nested nest-level-2">
+              <li>
+                <a href="javascript:void(0);" 
+                  onclick="toggleContent('content/projects/rubiks-nn.html', 
+                  'rubiks-nn', 2)">
+                  Rubik's Cube Solver Neural Network
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0);" 
+                  onclick="toggleContent('content/projects/ball-pit.html', 
+                  'ball-pit', 2)">
+                  2D Physics Engine
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <span class="caret">
+              <a href="javascript:void(0);">Miscellaneous</a>
+            </span>
+            <ul class="nested nest-level-2">
+              <li>
+                <a href="javascript:void(0);" 
+                  onclick="toggleContent('content/projects/x61.html', 'x61',
+                  2)">
+                  ThinkPad X61
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0);" 
+                  onclick="toggleContent('content/projects/niu-mini.html',
+                  'niu-mini', 2)">
+                  Niu Mini
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0);" 
+                  onclick="toggleContent('content/projects/workflow.html',
+                  'workflow', 2)">
+                  Workflow
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0);" 
+                  onclick="toggleContent('content/projects/future.html',
+                  'future-non-career', 2)">
+                  Future Projects
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
       </li>
       <li>
         <a href="javascript:void(0);" onclick="toggleContent('content/lifts.html', 'lifts')">Lifts</a>
@@ -42,7 +93,16 @@
       <li>
         <a href="javascript:void(0);" onclick="toggleContent('content/pictures.html', 'pictures')">Pictures</a>
       </li>
-    </ul>
+      <li>
+        <a href="assets/AntonChenResume.pdf" target="_blank">Résumé</a>
+      </li>
+      <li>
+        <a href="javascript:void(0);" onclick="toggleContent('content/about.html', 'about')">About</a>
+      </li>
+      <li>
+        <a href="javascript:void(0);" onclick="toggleContent('content/contact.html', 'contact')">Contact</a>
+      </li>
+    </ul> 
 
     <p>
       Don't like how this page looks? You can 

@@ -60,14 +60,15 @@ function toggleMode() {
   }
 }
 
-function toggleContent(page, id) {
+function toggleContent(page, id, nestLevel = 0) {
   var listItem = event.target.parentNode;
   var contentDiv = document.getElementById(id + '-content');
 
   if (!contentDiv) {
     contentDiv = document.createElement('div');
     contentDiv.id = id + '-content';
-    contentDiv.className = 'content-container';
+    contentDiv.className = `content-container nest-level-${nestLevel}` ;
+
     listItem.appendChild(contentDiv);
 
     fetch(page)
@@ -85,3 +86,13 @@ function toggleContent(page, id) {
     listItem.removeChild(contentDiv);
   }
 }
+
+var toggler = document.getElementsByClassName("caret");
+var i;
+
+for (i = 0; i < toggler.length; i++) {
+  toggler[i].addEventListener("click", function() {
+    this.parentElement.querySelector(".nested").classList.toggle("active");
+    this.classList.toggle("caret-down");
+  });
+} 
