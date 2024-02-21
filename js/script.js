@@ -1,5 +1,5 @@
 let isDarkMode = false;
-let vantaNet = null;
+let vantaBackground = null;
 
 function toggleDarkMode() {
   const body = document.body;
@@ -13,7 +13,7 @@ function toggleDarkMode() {
   body.style.fontFamily = isDarkMode ? 'Inter, Helvetica, sans-serif' : '';
 
   if (isDarkMode) {
-    vantaNet = VANTA.NET({
+    vantaBackground = VANTA.NET({
       el: "#vanta-container",
       mouseControls: false,
       touchControls: false,
@@ -25,8 +25,8 @@ function toggleDarkMode() {
       color: 0x1A1E2A,
       backgroundColor: 0x11151F,
     });
-  } else if (vantaNet) {
-    vantaNet.destroy();
+  } else if (vantaBackground) {
+    vantaBackground.destroy();
   }
 }
 
