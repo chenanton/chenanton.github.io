@@ -4,6 +4,10 @@ body.terminal {
   font-family: monospace;
 }
 
+body.terminal p {
+  color: #fff;
+}
+
 body.terminal li {
   list-style-type: decimal-leading-zero;
 }
@@ -13,6 +17,22 @@ body.terminal a {
   color: #0ff;
 }
 
-body.terminal .content-container, img, video {
+body.terminal a:active {
+  color: #f0f;
+}
+
+body.terminal a:hover {
+  color: #f0f;
+}
+
+body.terminal a:visited {
+  color: #f0f;
+}
+
+body.terminal .content-container {
+  border: 1px solid #0f0;
+}
+
+body.terminal img, video {
   border: 1px solid #0f0;
 }
