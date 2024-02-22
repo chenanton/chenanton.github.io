@@ -1,7 +1,7 @@
 var modes = [
   'default', 
   'network', 
-  'terminal'
+  // 'terminal'
 ]
 
 var titles = [
@@ -10,9 +10,14 @@ var titles = [
   'root@antonchen.ca'
 ]
 
-var greetings = [
+var greetings1 = [
+  '',
+  'Hi! 👋'
+]
+
+var greetings2 = [
   'Anton Chen',
-  'Hi, I\'m Anton! 👋',
+  'I\'m Anton. Nice to meet you!',
   `$ echo \'#include <iostream>
 
 int main() {
@@ -25,6 +30,13 @@ int main() {
 && g++ main.cc
 && ./a.out`
 ]
+
+var copyright = [
+  '© 2001 Anton Chen',
+  '© 2024 | Designed & programmed by yours truly 🤯'
+]
+
+document.getElementById('toggle-theme').checked = false;
 
 var currentModeIndex = 0;
 
@@ -42,7 +54,9 @@ function toggleMode() {
 
   // Customize other mode-specific actions here
   document.title = titles[currentModeIndex];
-  document.getElementById('greeting').textContent = greetings[currentModeIndex];
+  document.getElementById('greeting1').textContent = greetings1[currentModeIndex];
+  document.getElementById('greeting2').textContent = greetings2[currentModeIndex];
+  document.getElementById('copyright').textContent = copyright[currentModeIndex];
 
   if (modes[currentModeIndex] === 'network') {
     vantaBackground = VANTA.NET({
