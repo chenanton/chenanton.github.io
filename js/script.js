@@ -1,66 +1,65 @@
-var modes = [
-  'default', 
-  'network', 
-  // 'terminal'
-]
+document.querySelectorAll('.toggle').forEach(link => {
+  link.addEventListener('click', () => {
+    link.classList.toggle('toggled');
+  });
+});
 
-var titles = [
-  'antonchen.ca',
-  'Anton Chen',
-  // 'root@antonchen.ca'
-]
+document.querySelectorAll('.toggle-content').forEach(link => {
+  link.addEventListener('click', () => {
+    var id = link.id;
+    var nestLevel = Array.from(link.closest('ul').classList)
+      .find(c => c.startsWith('nest-level-'));
 
-var greetings1 = [
-  '',
-  'Hi! 👋'
-]
+    const listItem = link.parentNode;
+    const page = `content/${id}.html`
+    const contentDiv = document.getElementById(`${id}-content`);
 
-var greetings2 = [
-  'Anton Chen',
-  'I\'m Anton. Nice to meet you!',
-  // `$ echo \'#include <iostream>
+    if (!contentDiv) {
+      const newContentDiv = document.createElement('div');
+      newContentDiv.id = `${id}-content`;
+      newContentDiv.className = `content-container ${nestLevel}` ;
 
-// int main() {
-  // std::cout << "antonchen.ca" << std::endl;
+      listItem.appendChild(newContentDiv);
 
-  // return 0;
-// }
-// \'
-// > main.cc
-// && g++ main.cc
-// && ./a.out`
-]
+      fetch(page)
+        .then(response => response.text())
+        .then(html => {
+          newContentDiv.innerHTML = html;
+        })
+        .catch(error => console.error('Error fetching content:', error));
+    } else {
+      // Clear or remove contentDiv based on its content
+      if (contentDiv.innerHTML.trim() !== '') {
+        contentDiv.innerHTML = ''; // Clear the content
+      }
 
-var copyright = [
-  '© 2001 Anton Chen',
-  '© 2024 | Designed && programmed by yours truly 🧑‍💻'
-]
+      listItem.removeChild(contentDiv);
+    }
+  });
+});
 
 document.getElementById('toggle-theme').checked = false;
 
-var currentModeIndex = 0;
-
+var isDarkmode = false;
 let vantaBackground = null;
+let typed = null;
 
-function toggleMode() {
-  // Remove the current mode class
-  document.body.classList.remove(modes[currentModeIndex]);
-
-  // Increment the mode index or reset to 0 if at the end of the array
-  currentModeIndex = (currentModeIndex + 1) % modes.length;
-
-  // Add the new mode class
-  document.body.classList.add(modes[currentModeIndex]);
+// Toggle theme
+const checkbox = document.getElementById('toggle-theme');
+checkbox.addEventListener('change', () => {
+  document.body.classList.remove(isDarkmode ? "network" : "default");
+  isDarkmode = !isDarkmode;
+  document.body.classList.add(isDarkmode ? "network" : "default");
 
   // Customize other mode-specific actions here
-  document.title = titles[currentModeIndex];
-  document.getElementById('greeting1').textContent = greetings1[currentModeIndex];
-  document.getElementById('greeting2').textContent = greetings2[currentModeIndex];
-  document.getElementById('copyright').textContent = copyright[currentModeIndex];
+  document.title = isDarkmode ? "Anton Chen" : "antonchen.ca";
+  document.getElementById('greeting').textContent 
+    = isDarkmode ? "Hi! 👋" : "Anton Chen";
+  document.getElementById('copyright').textContent 
+    = isDarkmode ? "© 2024 | Designed && programmed by yours truly 🧑‍💻" : '© 2001 Anton Chen';
 
   var audio = document.getElementById('radio');
-
-  if (modes[currentModeIndex] === 'network') {
+  if (checkbox.checked) {
     vantaBackground = VANTA.NET({
       el: "#vanta-container",
       mouseControls: false,
@@ -74,72 +73,45 @@ function toggleMode() {
       backgroundColor: 0x10141A,
     });
 
+    typed = new Typed('#typewriter', {
+      strings: ['I\'m Anton!^100 Nice two', 'I\'m Anton! Nice to meet you!'],
+      typeSpeed: 35,
+      startDelay: 500,
+      backDelay: 70,
+      smartBackspace: true,
+    });
+
     audio.src = 'assets/music/let-girls-play-soccer.mp3';
-  } else if (vantaBackground) {
+  } else {
     vantaBackground.destroy();
+    typed.destroy();
 
     audio.src = 'assets/music/memory-limitations-in-artificial-intelligence.mp3';
   }
 
   turnOffMusic();
-}
+});
 
-function toggleContent(page, id, nestLevel = 0) {
-  var listItem = event.target.parentNode;
-  var contentDiv = document.getElementById(id + '-content');
-
-  if (!contentDiv) {
-    contentDiv = document.createElement('div');
-    contentDiv.id = id + '-content';
-    contentDiv.className = `content-container nest-level-${nestLevel}` ;
-
-    listItem.appendChild(contentDiv);
-
-    fetch(page)
-      .then(response => response.text())
-      .then(html => {
-        contentDiv.innerHTML = html;
-      })
-      .catch(error => console.error('Error fetching content:', error));
-  } else {
-    if (contentDiv.innerHTML.trim() !== '') {
-      contentDiv.innerHTML = ''; // Clear the content
-    }
-
-    // Remove the contentDiv from its parent
-    listItem.removeChild(contentDiv);
-  }
-}
-
-var toggler = document.getElementsByClassName("caret");
-var i;
-
-for (i = 0; i < toggler.length; i++) {
-  toggler[i].addEventListener("click", function() {
+document.querySelectorAll(".caret").forEach(toggler => {
+  toggler.addEventListener("click", function() {
     this.parentElement.querySelector(".nested").classList.toggle("active");
-    this.classList.toggle("caret-down");
   });
-} 
+});
 
-function toggleMusic() {
+document.getElementById('radioLink').addEventListener('click', () => {
   var audio = document.getElementById('radio');
   if (audio.paused) {
     turnOnMusic();
   } else {
     turnOffMusic();
   }
-}
+});
 
 function turnOffMusic() {
   var audio = document.getElementById('radio');
   audio.pause();
 
   var radioLink = document.getElementById('radioLink');
-  radioLink.textContent = 'Radio';
-
-  if (radioLink.classList.contains('bold')) {
-    radioLink.classList.remove('bold');
-  }
   radioLink.textContent = 'Radio';
 }
 
@@ -149,8 +121,4 @@ function turnOnMusic() {
 
   var radioLink = document.getElementById('radioLink');
   radioLink.textContent = 'Radio (on)';
-
-  if (!radioLink.classList.contains('bold')) {
-    radioLink.classList.add('bold');
-  }
 }

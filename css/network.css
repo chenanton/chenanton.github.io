@@ -1,13 +1,10 @@
 /* Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
-.bold {
-  font-weight: bold;
-}
-
 body.network {
   color: #f0f1f2;
   font-family: Inter, Helvetica, sans-serif;
+  font-size: 0.9em;
 }
 
 body.network h1 {
@@ -40,12 +37,11 @@ body.network a {
 }
 
 body.network .nest-level-0 a {
-  font-weight: 500;
   text-decoration: underline;
 }
 
 body.network .nest-level-1 a {
-  font-weight: 300;
+  font-weight: 400;
   text-decoration: none;
 }
 
@@ -66,14 +62,23 @@ body.network a:visited {
   color: #fff;
 }
 
+body.network .toggled {
+  font-weight: bold;
+}
+
 body.network video,
 body.network img {
   border-radius: 4px;
 }
 
+body.network #nav {
+  padding-bottom: 20px;
+}
+
 body.network .content-container {
+  padding: 20px;
   background-color: rgba(4, 6, 10, 0.5);
-  border-radius: 6px;
+  border-radius: 4px;
   backdrop-filter: blur(3px);
 }
 
@@ -88,25 +93,23 @@ body.network footer {
   font-weight: 500;
 }
 
-body.network #greeting2 {
-  overflow: hidden;
-  border-right: .15em solid white;
-  width: 14em;
-  /* width: 0; */
-  white-space: nowrap; /* Keeps the content on a single line */
-  animation: 
-    typing 1s steps(50, end),
-    blink-caret .75s step-end infinite;
+body.network .logo::before {
+  position: relative;
+  top: 6px;
 }
 
-/* The typing effect */
-@keyframes typing {
-  from { width: 0 }
-  to { width: 14em }
+body.network #github::before {
+  content: url('../assets/logos/logo-gh.svg');
 }
 
-/* The typewriter cursor effect */
-@keyframes blink-caret {
-  from, to { border-color: transparent }
-  45% { border-color: white; }
+body.network #linkedin::before {
+  content: url('../assets/logos/logo-li.svg');
 }
+
+body.network #email::before {
+  content: url('../assets/logos/logo-em.svg');
+}
+
+/* body.network .logo { */
+/*   text-decoration: none; */
+/* } */

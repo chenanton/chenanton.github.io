@@ -7,8 +7,6 @@
   <title>antonchen.ca</title>
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <link rel="stylesheet" type="text/css" href="css/network.css">
-  <link rel="stylesheet" type="text/css" href="css/terminal.css">
-  <!-- <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🅰️</text></svg>"> -->
 </head>
 
 <body>
@@ -17,154 +15,133 @@
 
   <main>
     <header>
-      <h1 id="greeting1"></h1>
-      <h2 id="greeting2">Anton Chen</h2>
+      <h1 id="greeting">Anton Chen</h1>
+      <h2><span id="typewriter"></span></h2>
     </header>
 
     <p>
     Welcome to my website. While you're here, you might as well look around.
     </p>
 
-    <ul class="nest-level-0">
+    <ul id="nav" class="nest-level-0">
       <li>
-        <a href="javascript:void(0);" 
-          onclick="toggleContent('content/about.html', 'about')">
+        <a href="javascript:void(0);" id='about' class="toggle toggle-content">
           About
         </a>
       </li>
       <li>
-        <span class="caret">
-          <a href="javascript:void(0);">Education</a>
-        </span>
+        <a class="toggle caret" href="javascript:void(0);">Education</a>
         <ul class="nested nest-level-1">
           <li>
             <a href="javascript:void(0);" 
-              onclick="toggleContent('content/education/ubc2024.html', 
-              'ubc2024', 1)">
+              id="education/ubc2024"
+              class="toggle toggle-content">
               UBC, B.Sc. (Hons.), Computer Science, Statistics, 2024
             </a>
           </li>
         </ul>
       </li>
       <li>
-        <span class="caret">
-          <a href="javascript:void(0);">Experience</a>
-        </span>
+        <a class="toggle caret" href="javascript:void(0);">Experience</a>
         <ul class="nested nest-level-1">
           <li>
             <a href="javascript:void(0);" 
-              onclick="toggleContent('content/experience/aws2023.html', 
-              'aws2023', 1)">
+              id='experience/aws2023' class="toggle toggle-content">
               AWS, Software Engineering Intern, 2023
             </a>
           </li>
           <li>
             <a href="javascript:void(0);" 
-              onclick="toggleContent('content/experience/tesla2023.html', 
-              'tesla2023', 1)">
+              id="experience/tesla2023" class="toggle toggle-content" >
               Tesla, Software Engineering Intern, 2023
             </a>
           </li>
           <li>
             <a href="javascript:void(0);" 
-              onclick="toggleContent('content/experience/aws2022.html', 
-              'aws2022', 1)">
+              id="experience/aws2022"
+              class="toggle toggle-content">
               AWS, Software Engineering Intern, 2022
             </a>
           </li>
           <li>
             <a href="javascript:void(0);" 
-              onclick="toggleContent('content/experience/vipre2021.html', 
-              'vipre2021', 1)">
+              id="experience/vipre2021" class="toggle toggle-content">
               VIPRE Security, Software Engineering Intern, 2021
             </a>
           </li>
         </ul>
       </li>
       <li>
-        <span class="caret">
-          <a href="javascript:void(0);">Projects</a>
-        </span>
+        <a class="toggle caret" href="javascript:void(0);">Projects</a>
         <ul class="nested nest-level-1">
           <li>
-            <span class="caret">
-              <a href="javascript:void(0);">Development</a>
-            </span>
+            <a class="toggle caret" href="javascript:void(0);">Development</a>
             <ul class="nested nest-level-2">
               <li>
                 <a href="javascript:void(0);" 
-                  onclick="toggleContent('content/projects/ubc-insight.html', 
-                  'ubc-insight', 2)">
+                  id="projects/ubc-insight" class="toggle toggle-content">
                   UBC Course and Building Query Engine
                 </a>
               </li>
               <li>
                 <a href="javascript:void(0);" 
-                  onclick="toggleContent('content/projects/sentri.html', 
-                  'sentri', 2)">
+                  id="projects/sentri" class="toggle toggle-content">
                   Campus Safe Walk Planner (Hackathon)
                 </a>
               </li>
               <li>
                 <a href="javascript:void(0);" 
-                  onclick="toggleContent('content/projects/vaccelerator.html', 
-                  'vaccelerator', 2)">
+                  id="projects/vaccelerator"
+                  class="toggle toggle-content">
                   COVID Vaccine Distribution Dashboard (Hackathon)
                 </a>
               </li>
               <li>
                 <a href="javascript:void(0);" 
-                  onclick="toggleContent('content/projects/personal-website.html', 
-                  'personal-website', 2)">
+                  id="projects/personal-website"
+                  class="toggle toggle-content">
                   Personal Website
                 </a>
               </li>
               <li>
                 <a href="javascript:void(0);" 
-                  onclick="toggleContent('content/projects/rubiks-nn.html', 
-                  'rubiks-nn', 2)">
+                  id="projects/rubiks-nn" class="toggle toggle-content">
                   Rubik's Cube Solver Neural Network
                 </a>
               </li>
               <li>
                 <a href="javascript:void(0);" 
-                  onclick="toggleContent('content/projects/ball-pit.html', 
-                  'ball-pit', 2)">
+                  id="projects/ball-pit" class="toggle toggle-content">
                   2D Physics Engine
                 </a>
               </li>
             </ul>
           </li>
           <li>
-            <span class="caret">
-              <a href="javascript:void(0);">Miscellaneous</a>
-            </span>
+            <a class="toggle caret" href="javascript:void(0);">Miscellaneous</a>
             <ul class="nested nest-level-2">
               <li>
                 <a href="javascript:void(0);" 
-                  onclick="toggleContent('content/projects/x61.html', 'x61',
-                  2)">
+                  id="projects/x61" class="toggle toggle-content">
                   ThinkPad X61
                 </a>
               </li>
               <li>
                 <a href="javascript:void(0);" 
-                  onclick="toggleContent('content/projects/niu-mini.html',
-                  'niu-mini', 2)">
+                  id="projects/niu-mini" class="toggle toggle-content">
                   NIU Mini
                 </a>
               </li>
               <li>
                 <a href="javascript:void(0);" 
-                  onclick="toggleContent('content/projects/workflow.html',
-                  'workflow', 2)">
+                  id="projects/workflow"
+                  class="toggle toggle-content">
                   Minimal Computing Environment
                 </a>
               </li>
               <li>
                 <a href="javascript:void(0);" 
-                  onclick="toggleContent('content/projects/future.html',
-                  'future-non-career', 2)">
+                  id="projects/future" class="toggle toggle-content">
                   Future Projects
                 </a>
               </li>
@@ -174,15 +151,21 @@
       </li>
       <li>
         <a href="javascript:void(0);" 
-          onclick="toggleContent('content/lifts.html', 'lifts')">
+          id="lifts" class="toggle toggle-content">
           Lifting
         </a>
       </li>
       <li>
-        <a href="javascript:void(0);" onclick="toggleContent('content/pictures.html', 'pictures')">Gallery</a>
+        <a href="javascript:void(0);" 
+          id="pictures" class="toggle toggle-content">
+            Gallery
+        </a>
       </li>
       <li>
-        <a id="radioLink" href="javascript:void(0);" onclick="toggleMusic()">Radio</a>
+        <a href="javascript:void(0);" 
+          id="radioLink" class="toggle">
+          Radio
+        </a>
         <audio 
           id="radio" 
           src="assets/music/memory-limitations-in-artificial-intelligence.mp3" 
@@ -194,20 +177,34 @@
         <a href="assets/AntonChenResume.pdf" target="_blank">Résumé</a>
       </li>
       <li>
-        <a href="javascript:void(0);" onclick="toggleContent('content/contact.html', 'contact')">Contact</a>
+        <a class="toggle caret" href="javascript:void(0);">Contact</a>
+        <ul class="nested nest-level-1">
+          <li>
+            <a class="logo" id="github" target="_blank" 
+              href="https://github.com/chenanton">
+              GitHub
+            </a>
+          </li>
+          <li>
+            <a class="logo" id="linkedin" target="_blank"
+              href="https://linkedin.com/in/chenanton">
+              LinkedIn
+            </a>
+          </li>
+          <li>
+            <a class="logo" id="email" target="_blank"
+              href="mailto:contact@antonchen.ca">
+              Shoot me an email
+            </a>
+          </li>
+        </ul>
       </li>
     </ul> 
 
-    <!-- <!-1- for >2 themes -1-> -->
-    <!-- <p> -->
-    <!--   Don't like how this page looks? You can --> 
-    <!--   <a href="javascript:void(0);" onclick="toggleMode()">change the theme</a>. -->
-    <!-- </p> -->
-
     <p>
       Doesn't this page look a bit boring?
-      See what this does:
-      <input id="toggle-theme" type="checkbox" onclick="toggleMode()">
+      Let's see what this does:
+      <input id="toggle-theme" type="checkbox">
     </p>
 
     <footer>
@@ -222,9 +219,10 @@
   <script 
     src="https://cdn.jsdelivr.net/gh/tengbao/vanta@master/dist/vanta.net.min.js">
   </script>
-  <script 
-    type="text/javascript" src="js/vanilla-tilt.min.js">
-  </script>
+  <!-- <script --> 
+  <!--   type="text/javascript" src="js/vanilla-tilt.min.js"> -->
+  <!-- </script> -->
+  <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
   <script 
     src="js/script.js">
   </script>
