@@ -6,8 +6,8 @@ var modes = [
 
 var titles = [
   'antonchen.ca',
-  'Anton Chen\'s Website',
-  'root@antonchen.ca'
+  'Anton Chen',
+  // 'root@antonchen.ca'
 ]
 
 var greetings1 = [
@@ -18,22 +18,22 @@ var greetings1 = [
 var greetings2 = [
   'Anton Chen',
   'I\'m Anton. Nice to meet you!',
-  `$ echo \'#include <iostream>
+  // `$ echo \'#include <iostream>
 
-int main() {
-  std::cout << "antonchen.ca" << std::endl;
+// int main() {
+  // std::cout << "antonchen.ca" << std::endl;
 
-  return 0;
-}
-\'
-> main.cc
-&& g++ main.cc
-&& ./a.out`
+  // return 0;
+// }
+// \'
+// > main.cc
+// && g++ main.cc
+// && ./a.out`
 ]
 
 var copyright = [
   '© 2001 Anton Chen',
-  '© 2024 | Designed & programmed by yours truly 🤯'
+  '© 2024 | Designed && programmed by yours truly 🧑‍💻'
 ]
 
 document.getElementById('toggle-theme').checked = false;
@@ -58,6 +58,8 @@ function toggleMode() {
   document.getElementById('greeting2').textContent = greetings2[currentModeIndex];
   document.getElementById('copyright').textContent = copyright[currentModeIndex];
 
+  var audio = document.getElementById('radio');
+
   if (modes[currentModeIndex] === 'network') {
     vantaBackground = VANTA.NET({
       el: "#vanta-container",
@@ -71,9 +73,15 @@ function toggleMode() {
       color: 0xB71737,
       backgroundColor: 0x10141A,
     });
+
+    audio.src = 'assets/music/let-girls-play-soccer.mp3';
   } else if (vantaBackground) {
     vantaBackground.destroy();
+
+    audio.src = 'assets/music/memory-limitations-in-artificial-intelligence.mp3';
   }
+
+  turnOffMusic();
 }
 
 function toggleContent(page, id, nestLevel = 0) {
@@ -112,3 +120,37 @@ for (i = 0; i < toggler.length; i++) {
     this.classList.toggle("caret-down");
   });
 } 
+
+function toggleMusic() {
+  var audio = document.getElementById('radio');
+  if (audio.paused) {
+    turnOnMusic();
+  } else {
+    turnOffMusic();
+  }
+}
+
+function turnOffMusic() {
+  var audio = document.getElementById('radio');
+  audio.pause();
+
+  var radioLink = document.getElementById('radioLink');
+  radioLink.textContent = 'Radio';
+
+  if (radioLink.classList.contains('bold')) {
+    radioLink.classList.remove('bold');
+  }
+  radioLink.textContent = 'Radio';
+}
+
+function turnOnMusic() {
+  var audio = document.getElementById('radio');
+  audio.play();
+
+  var radioLink = document.getElementById('radioLink');
+  radioLink.textContent = 'Radio (on)';
+
+  if (!radioLink.classList.contains('bold')) {
+    radioLink.classList.add('bold');
+  }
+}

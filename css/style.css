@@ -143,10 +143,6 @@ video {
   margin-left: -140px;
 }
 
-.caret-down {
-  color: #f00;
-}
-
 .video-container {
   position: relative;
   padding-bottom: 56.25%; /* 16:9 */

@@ -8,6 +8,7 @@
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <link rel="stylesheet" type="text/css" href="css/network.css">
   <link rel="stylesheet" type="text/css" href="css/terminal.css">
+  <!-- <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🅰️</text></svg>"> -->
 </head>
 
 <body>
@@ -181,6 +182,15 @@
         <a href="javascript:void(0);" onclick="toggleContent('content/pictures.html', 'pictures')">Gallery</a>
       </li>
       <li>
+        <a id="radioLink" href="javascript:void(0);" onclick="toggleMusic()">Radio</a>
+        <audio 
+          id="radio" 
+          src="assets/music/memory-limitations-in-artificial-intelligence.mp3" 
+          type="audio/mp3"
+          loop>
+        </audio>
+      </li>
+      <li>
         <a href="assets/AntonChenResume.pdf" target="_blank">Résumé</a>
       </li>
       <li>
@@ -200,12 +210,8 @@
       <input id="toggle-theme" type="checkbox" onclick="toggleMode()">
     </p>
 
-    <!-- <footer> -->
-    <!--   &copy; 2024 Anton Chen -->
-    <!-- </footer> -->
-
     <footer>
-      <p id="copyright">&copy; 2024 Anton Chen</p>
+      <p id="copyright">&copy; 2001 Anton Chen</p>
     </footer>
 
   </main>
