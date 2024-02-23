@@ -34,35 +34,17 @@ function shuffleArray(array) {
 defaultMode.songs = shuffleArray(defaultMode.songs);
 darkMode.songs = shuffleArray(darkMode.songs);
 
-var isDarkmode = false;
-
 let vantaBackground = null;
 let typed = null;
 
-let playlist = (isDarkmode ? darkMode : defaultMode).songs;
-
-// Toggle theme
-var audio = document.getElementById('radio');
-
-document.getElementById('toggle-theme').checked = false;
-
-const checkbox = document.getElementById('toggle-theme');
-checkbox.addEventListener('change', () => {
-  document.body.classList.remove((isDarkmode ? darkMode : defaultMode).name);
-
-  isDarkmode = !isDarkmode;
-
-  let mode = isDarkmode ? darkMode : defaultMode;
-  document.body.classList.add(mode.name);
+function setStyle() {
+  let mode = isDarkMode ? darkMode : defaultMode;
   document.title = mode.title
   document.getElementById('greeting').textContent = mode.greeting
   document.getElementById('copyright').textContent = mode.copyright
 
-  playlist = (isDarkmode ? darkMode : defaultMode).songs;
-
-  var paused = audio.paused;
-
-  if (checkbox.checked) {
+  if (isDarkMode) {
+    document.body.classList.add("network");
     vantaBackground = VANTA.NET({
       el: "#vanta-container",
       mouseControls: false,
@@ -81,9 +63,8 @@ checkbox.addEventListener('change', () => {
 
     typed = new Typed('#typewriter', {
       strings: [
-        'I\'m anto',
-        'I\'m Anton!^200 Nice too',
-        'I\'m Anton! Nice to meet you! :)^5000',
+        'I\'m ant',
+        'I\'m Anton!^300 Nice to meet you! :)^5000',
         'I\'m Anton! Nice to meet you! :P^1000',
         'I\'m Anton! Nice to meet you! :)',
       ],
@@ -94,11 +75,38 @@ checkbox.addEventListener('change', () => {
     });
 
   } else {
+    document.body.classList.remove("network");
     vantaBackground.destroy();
     typed.destroy();
   }
+}
+
+var isDarkMode = (localStorage.getItem("darkModeEnabled") === "true") ? true : false;
+if (isDarkMode) {
+  setStyle();
+  document.body.classList.add("network");
+  document.getElementById('toggle-theme').checked = true;
+} else {
+  document.body.classList.remove("network");
+  document.getElementById('toggle-theme').checked = false;
+}
+
+let playlist = (isDarkMode ? darkMode : defaultMode).songs;
+var audio = document.getElementById('radio');
+
+const checkbox = document.getElementById('toggle-theme');
+checkbox.addEventListener('change', () => {
+  isDarkMode = !isDarkMode;
+  localStorage.setItem("darkModeEnabled", isDarkMode.toString());
+
+  var paused = audio.paused;
+
+  setStyle();
 
   stopMusic();
+
+  playlist = (isDarkMode ? darkMode : defaultMode).songs;
+
   if (!paused) {
     playMusic();
   } 
