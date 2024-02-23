@@ -70,7 +70,7 @@ function setStyle() {
       color: 0x1f242f,
       backgroundColor: 0x11151F,
       points: 12.00,
-      maxDistance: (window.mobileCheck()) ? 24.00 : 14.00, // mobile scaling
+      maxDistance: (window.mobileCheck()) ? 14.00 : 24.00, // mobile scaling
       spacing: 16.00
     });
 
