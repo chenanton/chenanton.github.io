@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 body.network {
-  color: #d3d4d5;
+  color: #e3e4e5;
   font-family: Inter, Helvetica, sans-serif;
   font-size: 0.9em;
 }
@@ -83,7 +83,7 @@ body.network img {
 }
 
 body.network #nav {
-  padding-bottom: 20px;
+  padding-bottom: 10px;
 }
 
 body.network .content-container {
@@ -91,6 +91,7 @@ body.network .content-container {
   background-color: rgba(4, 6, 10, 0.5);
   border-radius: 4px;
   backdrop-filter: blur(3px);
+  box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.2);
 }
 
 body.network .content-container a {

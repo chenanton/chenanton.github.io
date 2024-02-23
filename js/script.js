@@ -152,12 +152,13 @@ checkbox.addEventListener('change', () => {
       strings: [
         'I\'m anto',
         'I\'m Anton!^200 Nice too',
-        'I\'m Anton! Nice to met',
-        'I\'m Anton! Nice to meet you! :)'
+        'I\'m Anton! Nice to meet you! :)^5000',
+        'I\'m Anton! Nice to meet you! :P^1000',
+        'I\'m Anton! Nice to meet you! :)',
       ],
       typeSpeed: 30,
       startDelay: 500,
-      backDelay: 70,
+      backDelay: 100,
       smartBackspace: true,
     });
 
