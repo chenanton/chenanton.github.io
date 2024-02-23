@@ -10,6 +10,11 @@
 </head>
 
 <body>
+  <script>
+    if (localStorage.getItem("darkModeEnabled") === "true") {
+      document.body.classList.add("network");
+    }
+  </script>
   <div id="vanta-container"></div>
 
   <main>
