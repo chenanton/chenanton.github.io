@@ -1,6 +1,72 @@
+var defaultMode = {
+  name: "default",
+  title: "antonchen.ca",
+  greeting: "Anton Chen",
+  copyright: "© 2001 Anton Chen",
+  songs: [
+    "No Love In The House Of Gold - heavy machinery (oil rig)",
+    "Infinity Frequencies - Memory limitations in artificial intelligence",
+    "Other Nothing - Ww",
+    "Izzard - Dec 9",
+    'Willix, hiraeth - Silence, I\'m Sinking.',
+    'Hisohkah, WMD - School Rooftop - Slowed Down Version',
+    'Sangam - One',
+    'Wishing - Goodnight Dad I Love You',
+  ]
+};
+
+var darkMode = {
+  name: "network",
+  title: "Anton Chen",
+  greeting: "Hi! 👋",
+  copyright: "© 2024 | Designed && programmed by yours truly 🧑‍💻",
+  songs: [
+    "Sleepy Fish - let girls play soccer",
+    "Birocratic - Belly Breathing",
+    "Team Astro - Love Lockdown"
+  ],
+  accentColors: [
+    0xb71737, // Red
+    0x48b339, // Green
+    0xb5906b, // Yellow
+    0x318fcf, // Blue
+    0xc678dd, // Purple
+    0x2a2e3a, // Grey
+  ]
+};
+
+function shuffleArray(array) {
+  return array.slice().sort(() => Math.random() - 0.5);
+}
+
+defaultMode.songs = shuffleArray(defaultMode.songs);
+darkMode.songs = shuffleArray(darkMode.songs);
+
+var isDarkmode = false;
+
+let vantaBackground = null;
+let netColorIndex = 0; // Vanta net color
+let typed = null;
+
+let playlist = (isDarkmode ? darkMode : defaultMode).songs;
+
+// Updates accent colors in darkmode
+function updateAccents() {
+  if (isDarkmode && vantaBackground !== null) {
+    netColorIndex = (netColorIndex + 1) % darkMode.accentColors.length;
+    vantaBackground.setOptions({color: darkMode.accentColors[netColorIndex]});
+  }
+}
+
+// Toggle theme
+var audio = document.getElementById('radio');
+
+// Event handlers
 document.querySelectorAll('.toggle').forEach(link => {
   link.addEventListener('click', () => {
     link.classList.toggle('toggled');
+
+    // updateAccents();
   });
 });
 
@@ -38,27 +104,35 @@ document.querySelectorAll('.toggle-content').forEach(link => {
   });
 });
 
+document.querySelectorAll(".toggle-dropdown").forEach(toggler => {
+  toggler.addEventListener("click", function() {
+    this.parentElement.querySelector(".nested").classList.toggle("active");
+  });
+});
+
+const heading = document.querySelector('h1');
+heading.addEventListener('click', function() {
+  updateAccents();
+});
+
 document.getElementById('toggle-theme').checked = false;
 
-var isDarkmode = false;
-let vantaBackground = null;
-let typed = null;
-
-// Toggle theme
 const checkbox = document.getElementById('toggle-theme');
 checkbox.addEventListener('change', () => {
-  document.body.classList.remove(isDarkmode ? "network" : "default");
+  document.body.classList.remove((isDarkmode ? darkMode : defaultMode).name);
+
   isDarkmode = !isDarkmode;
-  document.body.classList.add(isDarkmode ? "network" : "default");
 
-  // Customize other mode-specific actions here
-  document.title = isDarkmode ? "Anton Chen" : "antonchen.ca";
-  document.getElementById('greeting').textContent 
-    = isDarkmode ? "Hi! 👋" : "Anton Chen";
-  document.getElementById('copyright').textContent 
-    = isDarkmode ? "© 2024 | Designed && programmed by yours truly 🧑‍💻" : '© 2001 Anton Chen';
+  let mode = isDarkmode ? darkMode : defaultMode;
+  document.body.classList.add(mode.name);
+  document.title = mode.title
+  document.getElementById('greeting').textContent = mode.greeting
+  document.getElementById('copyright').textContent = mode.copyright
 
-  var audio = document.getElementById('radio');
+  playlist = (isDarkmode ? darkMode : defaultMode).songs;
+
+  var paused = audio.paused;
+
   if (checkbox.checked) {
     vantaBackground = VANTA.NET({
       el: "#vanta-container",
@@ -69,56 +143,56 @@ checkbox.addEventListener('change', () => {
       minWidth: 200.00,
       scale: 1.00,
       scaleMobile: 1.00,
-      color: 0xB71737,
-      backgroundColor: 0x10141A,
+      // color: 0xB71737,
+      // backgroundColor: 0x10141A,
+      color: darkMode.accentColors[netColorIndex],
+      backgroundColor: 0x11151F
     });
 
     typed = new Typed('#typewriter', {
-      strings: ['I\'m Anton!^100 Nice two', 'I\'m Anton! Nice to meet you!'],
+      strings: ['I\'m Anton!^200 Nice too', 'I\'m Anton! Nice to meet you!'],
       typeSpeed: 35,
       startDelay: 500,
       backDelay: 70,
       smartBackspace: true,
     });
 
-    audio.src = 'assets/music/let-girls-play-soccer.mp3';
   } else {
     vantaBackground.destroy();
     typed.destroy();
-
-    audio.src = 'assets/music/memory-limitations-in-artificial-intelligence.mp3';
   }
 
-  turnOffMusic();
+  stopMusic();
+  if (!paused) {
+    playMusic();
+  } 
 });
 
-document.querySelectorAll(".caret").forEach(toggler => {
-  toggler.addEventListener("click", function() {
-    this.parentElement.querySelector(".nested").classList.toggle("active");
-  });
-});
+// Music
+let currentSongIndex = 0;
 
-document.getElementById('radioLink').addEventListener('click', () => {
-  var audio = document.getElementById('radio');
+document.getElementById('toggle-radio').addEventListener('click', () => {
   if (audio.paused) {
-    turnOnMusic();
+    playMusic();
   } else {
-    turnOffMusic();
+    stopMusic();
   }
 });
 
-function turnOffMusic() {
-  var audio = document.getElementById('radio');
-  audio.pause();
-
-  var radioLink = document.getElementById('radioLink');
-  radioLink.textContent = 'Radio';
-}
-
-function turnOnMusic() {
-  var audio = document.getElementById('radio');
+function playMusic() {
+  songName = playlist[currentSongIndex]
+  audio.src = `assets/music/${songName}.mp3`;
   audio.play();
 
-  var radioLink = document.getElementById('radioLink');
-  radioLink.textContent = 'Radio (on)';
+  document.getElementById('song-name').textContent = songName;
 }
+
+function stopMusic() {
+  audio.pause();
+  currentSongIndex = (currentSongIndex + 1) % playlist.length;
+}
+
+audio.addEventListener('ended', () => {
+  currentSongIndex = (currentSongIndex + 1) % playlist.length;
+  playMusic();
+});

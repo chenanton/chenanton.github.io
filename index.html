@@ -30,7 +30,7 @@
         </a>
       </li>
       <li>
-        <a class="toggle caret" href="javascript:void(0);">Education</a>
+        <a class="toggle toggle-dropdown" href="javascript:void(0);">Education</a>
         <ul class="nested nest-level-1">
           <li>
             <a href="javascript:void(0);" 
@@ -42,7 +42,7 @@
         </ul>
       </li>
       <li>
-        <a class="toggle caret" href="javascript:void(0);">Experience</a>
+        <a class="toggle toggle-dropdown" href="javascript:void(0);">Experience</a>
         <ul class="nested nest-level-1">
           <li>
             <a href="javascript:void(0);" 
@@ -72,10 +72,10 @@
         </ul>
       </li>
       <li>
-        <a class="toggle caret" href="javascript:void(0);">Projects</a>
+        <a class="toggle toggle-dropdown" href="javascript:void(0);">Projects</a>
         <ul class="nested nest-level-1">
           <li>
-            <a class="toggle caret" href="javascript:void(0);">Development</a>
+            <a class="toggle toggle-dropdown" href="javascript:void(0);">Development</a>
             <ul class="nested nest-level-2">
               <li>
                 <a href="javascript:void(0);" 
@@ -118,7 +118,7 @@
             </ul>
           </li>
           <li>
-            <a class="toggle caret" href="javascript:void(0);">Miscellaneous</a>
+            <a class="toggle toggle-dropdown" href="javascript:void(0);">Miscellaneous</a>
             <ul class="nested nest-level-2">
               <li>
                 <a href="javascript:void(0);" 
@@ -161,23 +161,28 @@
             Gallery
         </a>
       </li>
+      <!-- <li> -->
+      <!--   <a href="javascript:void(0);" --> 
+      <!--     id="toggle-radio" class="toggle"> -->
+      <!--     Radio -->
+      <!--   </a> -->
+      <!-- </li> -->
       <li>
-        <a href="javascript:void(0);" 
-          id="radioLink" class="toggle">
-          Radio
-        </a>
         <audio 
           id="radio" 
-          src="assets/music/memory-limitations-in-artificial-intelligence.mp3" 
-          type="audio/mp3"
-          loop>
+          src="assets/music/Infinity%20Frequencies%20-%20Memory%20limitations%20in%20artificial%20intelligence.mp3" 
+          type="audio/mp3">
         </audio>
+        <a id="toggle-radio" class="toggle toggle-dropdown" href="javascript:void(0);">Radio</a>
+        <ul class="nested nest-level-1">
+          <li id="song-name"></li>
+        </ul>
       </li>
       <li>
         <a href="assets/AntonChenResume.pdf" target="_blank">Résumé</a>
       </li>
       <li>
-        <a class="toggle caret" href="javascript:void(0);">Contact</a>
+        <a class="toggle toggle-dropdown" href="javascript:void(0);">Contact</a>
         <ul class="nested nest-level-1">
           <li>
             <a class="logo" id="github" target="_blank" 
@@ -202,8 +207,8 @@
     </ul> 
 
     <p>
-      Doesn't this page look a bit boring?
-      Let's see what this does:
+      Don't like the design?
+      Try clicking this:
       <input id="toggle-theme" type="checkbox">
     </p>
 
@@ -211,13 +216,16 @@
       <p id="copyright">&copy; 2001 Anton Chen</p>
     </footer>
 
+
+
   </main>
 
   <script 
     src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r119/three.min.js">
   </script>
   <script 
-    src="https://cdn.jsdelivr.net/gh/tengbao/vanta@master/dist/vanta.net.min.js">
+    <!-- src="https://cdn.jsdelivr.net/gh/tengbao/vanta@master/dist/vanta.net.min.js"> -->
+    src="https://cdnjs.cloudflare.com/ajax/libs/vanta/0.5.24/vanta.net.min.js">
   </script>
   <!-- <script --> 
   <!--   type="text/javascript" src="js/vanilla-tilt.min.js"> -->
