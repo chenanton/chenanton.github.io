@@ -1,4 +1,4 @@
-var defaultMode = {
+const defaultMode = {
   name: "default",
   title: "antonchen.ca",
   greeting: "Anton Chen",
@@ -15,7 +15,7 @@ var defaultMode = {
   ]
 };
 
-var darkMode = {
+const darkMode = {
   name: "network",
   title: "Anton Chen",
   greeting: "Hi! 👋",
@@ -24,14 +24,6 @@ var darkMode = {
     "Sleepy Fish - let girls play soccer",
     "Birocratic - Belly Breathing",
     "Team Astro - Love Lockdown"
-  ],
-  accentColors: [
-    0x1f242f,
-    0xb71737, // Red
-    0x48b339, // Green
-    0x318fcf, // Blue
-    0xc678dd, // Purple
-    0xb5906b, // Yellow
   ]
 };
 
@@ -45,73 +37,12 @@ darkMode.songs = shuffleArray(darkMode.songs);
 var isDarkmode = false;
 
 let vantaBackground = null;
-let netColorIndex = 0; // Vanta net color
 let typed = null;
 
 let playlist = (isDarkmode ? darkMode : defaultMode).songs;
 
-// Updates accent colors in darkmode
-function updateAccents() {
-  if (isDarkmode && vantaBackground !== null) {
-    netColorIndex = (netColorIndex + 1) % darkMode.accentColors.length;
-    vantaBackground.setOptions({color: darkMode.accentColors[netColorIndex]});
-  }
-}
-
 // Toggle theme
 var audio = document.getElementById('radio');
-
-// Event handlers
-document.querySelectorAll('.toggle').forEach(link => {
-  link.addEventListener('click', () => {
-    link.classList.toggle('toggled');
-  });
-});
-
-document.querySelectorAll('.toggle-content').forEach(link => {
-  link.addEventListener('click', () => {
-    var id = link.id;
-    var nestLevel = Array.from(link.closest('ul').classList)
-      .find(c => c.startsWith('nest-level-'));
-
-    const listItem = link.parentNode;
-    const page = `content/${id}.html`
-    const contentDiv = document.getElementById(`${id}-content`);
-
-    if (!contentDiv) {
-      const newContentDiv = document.createElement('div');
-      newContentDiv.id = `${id}-content`;
-      newContentDiv.className = `content-container ${nestLevel}` ;
-
-      listItem.appendChild(newContentDiv);
-
-      fetch(page)
-        .then(response => response.text())
-        .then(html => {
-          newContentDiv.innerHTML = html;
-        })
-        .catch(error => console.error('Error fetching content:', error));
-    } else {
-      // Clear or remove contentDiv based on its content
-      if (contentDiv.innerHTML.trim() !== '') {
-        contentDiv.innerHTML = ''; // Clear the content
-      }
-
-      listItem.removeChild(contentDiv);
-    }
-  });
-});
-
-document.querySelectorAll(".toggle-dropdown").forEach(toggler => {
-  toggler.addEventListener("click", function() {
-    this.parentElement.querySelector(".nested").classList.toggle("active");
-  });
-});
-
-const heading = document.querySelector('h1');
-heading.addEventListener('click', function() {
-  updateAccents();
-});
 
 document.getElementById('toggle-theme').checked = false;
 
@@ -141,7 +72,7 @@ checkbox.addEventListener('change', () => {
       minWidth: 200.00,
       scale: 1.00,
       scaleMobile: 1.00,
-      color: darkMode.accentColors[netColorIndex],
+      color: 0x1f242f,
       backgroundColor: 0x11151F,
       points: 12.00,
       maxDistance: 24.00,
@@ -171,33 +102,4 @@ checkbox.addEventListener('change', () => {
   if (!paused) {
     playMusic();
   } 
-});
-
-// Music
-let currentSongIndex = 0;
-
-document.getElementById('toggle-radio').addEventListener('click', () => {
-  if (audio.paused) {
-    playMusic();
-  } else {
-    stopMusic();
-  }
-});
-
-function playMusic() {
-  songName = playlist[currentSongIndex]
-  audio.src = `assets/music/${songName}.mp3`;
-  audio.play();
-
-  document.getElementById('song-name').textContent = songName;
-}
-
-function stopMusic() {
-  audio.pause();
-  currentSongIndex = (currentSongIndex + 1) % playlist.length;
-}
-
-audio.addEventListener('ended', () => {
-  currentSongIndex = (currentSongIndex + 1) % playlist.length;
-  playMusic();
 });
