@@ -15,11 +15,16 @@
       document.body.classList.add("network");
     }
   </script>
+
   <div id="vanta-container"></div>
 
   <main>
     <header>
-      <h1 id="greeting">Anton Chen</h1>
+      <h1 id="greeting"></h1>
+      <script>
+        document.getElementById('greeting').textContent = 
+          (localStorage.getItem("darkModeEnabled") === "true") ? "Hi!" : "Anton Chen";
+      </script>
       <h2><span id="typewriter"></span></h2>
     </header>
 
