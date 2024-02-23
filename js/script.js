@@ -4,8 +4,8 @@ const defaultMode = {
   greeting: "Anton Chen",
   copyright: "© 2001 Anton Chen",
   songs: [
-    "No Love In The House Of Gold - heavy machinery (oil rig)",
     "Infinity Frequencies - Memory limitations in artificial intelligence",
+    "No Love In The House Of Gold - heavy machinery (oil rig)",
     "Other Nothing - Ww",
     "Izzard - Dec 9",
     'Willix, hiraeth - Silence, I\'m Sinking.',
@@ -22,8 +22,15 @@ const darkMode = {
   copyright: "© 2024 | Designed && programmed by yours truly 🧑‍💻",
   songs: [
     "Sleepy Fish - let girls play soccer",
+    "Sleepy Fish - Lunar Cycles",
+    "Playboi Carti - Stop Breathing",
     "Birocratic - Belly Breathing",
-    "Team Astro - Love Lockdown"
+    "Team Astro - Love Lockdown",
+    "Team Astro - Empty Shelves",
+    "Team Astro - Insomnia",
+    "Sworn - Keep Going",
+    "Middle School, Henry Gritton - Solstice",
+    "Afternoon Bike Ride, Sleepy Fish - Grid Search",
   ]
 };
 
@@ -103,9 +110,9 @@ checkbox.addEventListener('change', () => {
 
   setStyle();
 
-  stopMusic();
-
   playlist = (isDarkMode ? darkMode : defaultMode).songs;
+
+  stopMusic();
 
   if (!paused) {
     playMusic();
