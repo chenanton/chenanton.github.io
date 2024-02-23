@@ -149,10 +149,15 @@ checkbox.addEventListener('change', () => {
     });
 
     typed = new Typed('#typewriter', {
-      strings: ['I\'m Anton!^200 Nice too', 'I\'m Anton! Nice to meet you!'],
+      strings: [
+        'I\'m anto',
+        'I\'m Anton!^200 Nice too',
+        'I\'m Anton! Nice to met',
+        'I\'m Anton! Nice to meet you! :)'
+      ],
       typeSpeed: 30,
       startDelay: 500,
-      backDelay: 30,
+      backDelay: 70,
       smartBackspace: true,
     });
 
