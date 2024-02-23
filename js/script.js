@@ -26,12 +26,12 @@ var darkMode = {
     "Team Astro - Love Lockdown"
   ],
   accentColors: [
+    0x1f242f,
     0xb71737, // Red
     0x48b339, // Green
-    0xb5906b, // Yellow
     0x318fcf, // Blue
     0xc678dd, // Purple
-    0x2a2e3a, // Grey
+    0xb5906b, // Yellow
   ]
 };
 
@@ -65,8 +65,6 @@ var audio = document.getElementById('radio');
 document.querySelectorAll('.toggle').forEach(link => {
   link.addEventListener('click', () => {
     link.classList.toggle('toggled');
-
-    // updateAccents();
   });
 });
 
@@ -143,17 +141,18 @@ checkbox.addEventListener('change', () => {
       minWidth: 200.00,
       scale: 1.00,
       scaleMobile: 1.00,
-      // color: 0xB71737,
-      // backgroundColor: 0x10141A,
       color: darkMode.accentColors[netColorIndex],
-      backgroundColor: 0x11151F
+      backgroundColor: 0x11151F,
+      points: 12.00,
+      maxDistance: 24.00,
+      spacing: 16.00
     });
 
     typed = new Typed('#typewriter', {
       strings: ['I\'m Anton!^200 Nice too', 'I\'m Anton! Nice to meet you!'],
-      typeSpeed: 35,
+      typeSpeed: 30,
       startDelay: 500,
-      backDelay: 70,
+      backDelay: 30,
       smartBackspace: true,
     });
 
