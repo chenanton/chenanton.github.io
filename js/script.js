@@ -23,7 +23,7 @@ const darkMode = {
   songs: [
     "Sleepy Fish - let girls play soccer",
     "Sleepy Fish - Lunar Cycles",
-    "Playboi Carti - Stop Breathing",
+    // "Playboi Carti - Stop Breathing",
     "Birocratic - Belly Breathing",
     "Team Astro - Love Lockdown",
     "Team Astro - Empty Shelves",
