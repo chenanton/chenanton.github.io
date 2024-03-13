@@ -92,18 +92,6 @@ video {
   .content-container {
     margin-right: -20px;
   }
-
-  .content-container.nest-level-0 {
-    margin-left: -60px;
-  }
-
-  .content-container.nest-level-1 {
-    margin-left: -100px;
-  }
-
-  .content-container.nest-level-2 {
-    margin-left: -140px;
-  }
 }
 
 /* Nesting */
@@ -121,15 +109,15 @@ video {
 }
 
 .content-container.nest-level-0 {
-  margin-left: -60px;
+  margin-left: -40px;
 }
 
 .content-container.nest-level-1 {
-  margin-left: -100px;
+  margin-left: -80px;
 }
 
 .content-container.nest-level-2 {
-  margin-left: -140px;
+  margin-left: -120px;
 }
 
 .video-container {

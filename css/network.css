@@ -54,6 +54,18 @@ body.network a {
   color: #fff;
 }
 
+body.network .content-container.nest-level-0 {
+  margin-left: -60px;
+}
+
+body.network .content-container.nest-level-1 {
+  margin-left: -100px;
+}
+
+body.network .content-container.nest-level-2 {
+  margin-left: -140px;
+}
+
 body.network .nest-level-0 a {
   text-decoration: underline;
 }
