@@ -20,6 +20,10 @@ body.network h1 {
   body.network h1 {
     font-size: 4em;
   }
+
+  body.network .content-container {
+    margin-right: -20px;
+  }
 }
 
 /* expand h1 on hover */

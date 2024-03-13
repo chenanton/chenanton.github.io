@@ -88,10 +88,6 @@ video {
   .column {
     margin-right: 0;
   }
-
-  .content-container {
-    margin-right: -20px;
-  }
 }
 
 /* Nesting */
