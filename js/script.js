@@ -11,7 +11,7 @@ const defaultMode = {
     'Willix, hiraeth - Silence, I\'m Sinking.',
     'Hisohkah, WMD - School Rooftop - Slowed Down Version',
     'Sangam - One',
-    'Wishing - Goodnight Dad I Love You',
+    // 'Wishing - Goodnight Dad I Love You',
   ]
 };
 
