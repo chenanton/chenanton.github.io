@@ -10,7 +10,7 @@ function updateColor() {
   const red = Math.sin(frequency * time + 0) * amplitude + 128;
   // const green = Math.sin(frequency * time + 2) * 63 + 64;
   const green = 32;
-  const blue = Math.sin(frequency * time + 4) * (63 + 31) + 128 + 32;
+  const blue = Math.sin(frequency * time + 3) * (63 + 31) + 128 + 32;
 
   const color = (Math.floor(red) << 16) | (Math.floor(green) << 8) | Math.floor(blue);
   

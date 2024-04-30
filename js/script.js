@@ -70,8 +70,8 @@ function setStyle() {
       color: 0x1f242f,
       backgroundColor: 0x11151F,
       points: (window.mobileCheck()) ? 12.00 : 12.00,
-      maxDistance: (window.mobileCheck()) ? 14.00 : 24.00, // mobile scaling
-      spacing: (window.mobileCheck()) ? 12.00 : 20.00
+      maxDistance: (window.mobileCheck()) ? 14.00 : 20.00, // mobile scaling
+      spacing: (window.mobileCheck()) ? 12.00 : 16.00
     });
 
     typed = new Typed('#typewriter', {
