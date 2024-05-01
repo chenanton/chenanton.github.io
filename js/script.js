@@ -70,16 +70,17 @@ function setStyle() {
       color: 0x1f242f,
       backgroundColor: 0x11151F,
       points: (window.mobileCheck()) ? 12.00 : 12.00,
-      maxDistance: (window.mobileCheck()) ? 14.00 : 20.00, // mobile scaling
+      maxDistance: (window.mobileCheck()) ? 14.00 : 20.50, // mobile scaling
       spacing: (window.mobileCheck()) ? 16.00 : 16.00
     });
 
     typed = new Typed('#typewriter', {
       strings: [
-        'I\'m ant',
-        'I\'m Anton!^300 Nice to meet you! :)^5000',
-        'I\'m Anton! Nice to meet you! :P^1000',
-        'I\'m Anton! Nice to meet you! :)',
+        // 'I\'m ant',
+        // 'I\'m Anton!^300 Nice to meet you! :)^5000',
+        // 'I\'m Anton! Nice to meet you! :P^1000',
+        // 'I\'m Anton! Nice to meet you! :)',
+        'I\'m Anton.^300 Welcome to antonchen.ca ^750 :)'
       ],
       typeSpeed: 30,
       startDelay: 500,
