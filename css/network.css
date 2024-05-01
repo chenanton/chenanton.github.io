@@ -113,7 +113,8 @@ body.network img {
 }
 
 body.network #nav {
-  padding-bottom: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 body.network .content-container {
