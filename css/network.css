@@ -45,7 +45,8 @@ body.network h1:hover {
 
 body.network h2 {
   color: #fff;
-  font-style: italic;
+  /* font-style: italic; */
+  font-weight: 400;
 }
 
 body.network li {

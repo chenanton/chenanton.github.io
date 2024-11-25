@@ -80,7 +80,7 @@ function setStyle() {
         // 'I\'m Anton!^300 Nice to meet you! :)^5000',
         // 'I\'m Anton! Nice to meet you! :P^1000',
         // 'I\'m Anton! Nice to meet you! :)',
-        'I\'m Anton.^300 Welcome to antonchen.ca ^750 :)'
+        'I\'m Anton.^300 Welcome to my website! ^750 :)'
       ],
       typeSpeed: 30,
       startDelay: 500,
